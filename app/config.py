@@ -14,5 +14,6 @@ class Settings(BaseSettings):
     TESTING: bool = False
     Tick_URL: str = os.getenv("Tick_URL", "")
     TARGET_URL: str = os.getenv("TARGET_URL", "")
+    TELEX_WEBHOOK_URL: str = os.getenv("TELEX_WEBHOOK_URL", "")
     
 settings = Settings()
