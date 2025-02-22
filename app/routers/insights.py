@@ -14,7 +14,7 @@ class BusinessInsightResponse(BaseModel):
     recommendation: str
     generated_at: datetime
 
-router = APIRouter(prefix="/insights", tags=["Insights"])
+router = APIRouter(tags=["Insights"])
 
 @router.get(
     "/",
@@ -25,23 +25,7 @@ router = APIRouter(prefix="/insights", tags=["Insights"])
 async def get_weekly_insight(
     response: Response
 ):
-    """
-    Returns a weekly business growth insight based on the latest sales data.
     
-    The insight contains analysis of recent performance metrics and actionable
-    recommendations for business growth.
-    
-    Returns:
-        BusinessInsightResponse: An object with:
-            - metric: The metric being observed (e.g. Revenue)
-            - observation: Analysis of the current trend
-            - recommendation: Suggested action based on the analysis
-            - generated_at: Timestamp when the insight was generated
-    
-    Raises:
-        HTTPException: 
-            - 500 if insight generation fails
-    """
     try:
         
         logger.info("Generating insight")
