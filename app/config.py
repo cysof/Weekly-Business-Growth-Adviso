@@ -15,5 +15,6 @@ class Settings(BaseSettings):
     Tick_URL: str = os.getenv("Tick_URL", "")
     TARGET_URL: str = os.getenv("TARGET_URL", "")
     TELEX_WEBHOOK_URL: str = os.getenv("TELEX_WEBHOOK_URL", "")
+    PAYSTACK_API_KEY: str = os.getenv("PAYSTACK_API_KEY", "")
     
 settings = Settings()
