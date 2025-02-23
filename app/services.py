@@ -74,16 +74,13 @@ def generate_insight():
         revenue = data["revenue"]
         prev_revenue = data["previous_revenue"]
 
-        # Calculate the percent change
         if prev_revenue == 0:
             percent_change = 100 if revenue != 0 else 0
         else:
             percent_change = ((revenue - prev_revenue) / prev_revenue) * 100
 
-        # Format the percent change to 1 decimal place
         formatted_change = abs(round(percent_change, 1))
 
-        # Determine insight based on percentage change
         if percent_change < -15:
             observation = f"Revenue dropped significantly by {formatted_change}% this week."
             recommendation = "Run a promotional discount and email re-engagement campaign targeting inactive customers."
